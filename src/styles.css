@@ -1,0 +1,181 @@
+
+
+/*LOADER*/
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 1rem rgba(217, 255, 0, 0.61));
+}
+.loader:before {
+  width: 100%;
+  padding-bottom: 100%;
+  box-shadow: inset 0 0 0 1rem #BFFF00;
+  animation-name: pulsIn;
+}
+.loader:after {
+  width: calc(100% - 2rem);
+  padding-bottom: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 #BFFF00;
+}
+
+@keyframes pulsIn {
+  0% {
+    box-shadow: inset 0 0 0 1rem #BFFF00;
+    opacity: 1;
+  }
+  50%, 100% {
+    box-shadow: inset 0 0 0 0 #BFFF00;
+    opacity: 0;
+  }
+}
+
+@keyframes pulsOut {
+  0%, 50% {
+    box-shadow: 0 0 0 0 #BFFF00;
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 1rem #BFFF00;
+    opacity: 1;
+  }
+}
+    
+
+/*LOADER*/
+
+/*Grow*/
+
+.grow{
+  transition: .3s ease-in-out;
+  opacity: 0.5;
+}
+
+.grow:hover{
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  opacity: 1;
+}
+
+/*Grow*/
+
+/*HOVER NAME*/
+
+.hoverName {
+  --c: #fffff; /* the color */
+  --s: .15em;
+  
+  padding-bottom: calc(2.1*var(--s));
+  
+  transition: 1s;
+}
+.hoverName:hover {
+  --_p: 100%;
+  color: var(--c);
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+}
+
+
+/* Float Shadow */
+.hvr-float-shadow2 {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(12, 245, 4, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-float-shadow2:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(133, 247, 2, 0.35) 0%, rgba(135, 240, 14, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(198, 241, 4, 0.35) 0%, rgba(152, 243, 5, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.hvr-float-shadow2:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow2:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+
+.hvr-grow-shadow2 {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow2:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(176, 238, 6, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/*HOVER NAME*/
+
+/*projects img*/
+
+.proyect-img {
+  --s: 250px;   /* the size of the image */
+  --b: 8px;     /* the border thickness*/
+  --g: 14px;    /* the gap */
+  --c: #BFFF00; /* the color */
+  
+  width: var(--s);
+  aspect-ratio: 1;
+  outline: calc(var(--s)/2) solid #0009;
+  outline-offset: calc(var(--s)/-2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.proyect-img:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+
+.proyect-img + .proyect-img {
+  border-radius: 50%;
+}
+
+
+/*projects img*/
